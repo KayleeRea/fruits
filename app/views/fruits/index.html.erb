@@ -1,0 +1,13 @@
+<h1>Welcome! Please enter your favorite fruit</h1>
+
+<a href="/new">Add Fruit</a>
+
+  <table>
+    <% @fruits.each do |fruit| %>
+    <tr>
+      <td>Name: <%= fruit.name%></td>
+      <td><%= button_to "Edit Fruit", { action: "edit", id: fruit.id }, method: :get%> </td>
+      <td><%= button_to "Delete", {action: "destroy", id: fruit.id}, method: :delete%></td>
+    </tr>
+    <% end%>
+  </table>
